@@ -206,7 +206,7 @@ func (mb *tcpTransporter) connect() error {
 		return err
 	}
 	//second stage: ISOTCP (ISO 8073) Connection
-	err = mb.isoConnect()
+	err = mb.IsoConnect()
 	if err != nil {
 		return err
 	}
@@ -215,7 +215,7 @@ func (mb *tcpTransporter) connect() error {
 
 }
 
-func (mb *tcpTransporter) isoConnect() error {
+func (mb *tcpTransporter) IsoConnect() error {
 	msg := make([]byte, len(isoConnectionRequestTelegram))
 	copy(msg, isoConnectionRequestTelegram)
 	msg[16] = mb.localTSAPHigh
