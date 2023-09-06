@@ -50,7 +50,7 @@ func NewTCPClientHandler(address string, rack int, slot int) *TCPClientHandler {
 }
 
 // NewTCPClientHandler allocates a new TCPClientHandler.
-func NewTCPClientHandler(address string, rack int, slot int, connectionType int) *TCPClientHandler {
+func NewTCPClientHandlerWithType(address string, rack int, slot int, connectionType int) *TCPClientHandler {
 	h := &TCPClientHandler{}
 	h.Address = address
 	h.Timeout = tcpTimeout
